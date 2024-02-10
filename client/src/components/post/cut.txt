@@ -1,0 +1,2 @@
+{data.includes(currentUser.id) ? <FavoriteOutlinedIcon style={{color:"red"}}/> : <FavoriteBorderOutlinedIcon/>}
+                        {data.length} Likes
