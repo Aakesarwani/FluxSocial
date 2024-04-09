@@ -1,0 +1,31 @@
+name: SocialFlux-Frontend
+
+on:
+  push:
+    branches: [main]
+
+defaults:
+  run:
+    working-directory: ./client    
+
+jobs:
+  build:
+    runs-on: ['self-hosted', 'Linux', 'X64','react']
+
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'npm'
+          cache-dependency-path: './client/package-lock.json'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
