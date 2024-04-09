@@ -6,9 +6,11 @@ import commentRoutes from "./route/comments.js";
 import likeRoutes from "./route/likes.js";
 import relationshipRoutes from "./route/relationships.js";
 import authRoutes from "./route/auth.js";
+import follow from "./route/follow.js"
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import multer from "multer";
+//import uploadRoute from "./route/routeUpload.js"
 
 //middlewares
 app.use((req, res, next)=>{
@@ -45,7 +47,9 @@ app.use("/api/comments" , commentRoutes);
 app.use("/api/likes" , likeRoutes);
 app.use("/api/auth" , authRoutes);
 app.use("/api/relationships" , relationshipRoutes);
+app.use("/api/followsuggestions", follow);
+//app.use("/api/upload", uploadRoute);
 
 app.listen(8800, ()=>{
-    console.log("API working");
+    console.log("API working at port 8800");
 });

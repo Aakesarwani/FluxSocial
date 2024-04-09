@@ -45,6 +45,13 @@
                 }
             }
         }
+        button{
+            background-color: #72A0C1;
+            color: white;
+            border-radius: 5%;
+            width: 100px;
+            height: 30px;
+        }
         .right{
             display: flex;
             align-items: center;
@@ -66,9 +73,7 @@
                     border-radius: 50%;
                     object-fit: cover;
                 }
-                span{
-
-                }
+                
             }
         }
     }

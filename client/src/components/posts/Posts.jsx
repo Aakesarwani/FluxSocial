@@ -18,9 +18,11 @@ const Posts = ({userId}) =>{
 
         <div className="posts">
             {(userId) ? "Your Posts" :<Share></Share>}
-            {error ?"Something went wrong!" :(isLoading?"loading" : data.map((post)=>(
-                <Post post={post} key={post.id}/>
-            )))}
+            {error ?"Please Login to see the Posts!" :(
+                isLoading?"loading" : (
+                data ? (data.map((post)=>(
+                <Post post={post} key={post.id}/>))) : null)
+            )}
         </div>
     )
 }

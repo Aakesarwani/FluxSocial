@@ -11,12 +11,17 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { AuthContext } from "../../context/authContext";
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
     const {toggle , darkMode } = useContext(DarkModeContext);
     const { currentUser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
+    function toLogin() {
+        navigate('/login');
+    }
 
     return (
         <div className="navbar">
@@ -30,6 +35,7 @@ const Navbar = () => {
                     <input type="text" placeholder="Search..." style={{width:"500px",height:"30px",border:"none"}}/>
                 </div>
             </div>
+            <button onClick={toLogin}>LOGIN</button>
             <div className="right">
                 <PersonOutlineOutlinedIcon/>
                 <EmailOutlinedIcon/>

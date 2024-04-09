@@ -5,7 +5,7 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import TextsmsOutlinedIcon from '@mui/icons-material/TextsmsOutlined';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
-import { Link, buttonBaseClasses } from "@mui/material";
+import {  buttonBaseClasses } from "@mui/material";
 import Comments from "../comments/Comments";
 import moment from "moment";
 import { useQuery , useMutation, useQueryClient } from '@tanstack/react-query';
@@ -13,6 +13,7 @@ import { makeRequest } from "../../axios";
 import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
 import { rootShouldForwardProp } from "@mui/material/styles/styled";
+import { Link } from 'react-router-dom';
 
 const Post = ({post}) =>{
 

@@ -18,6 +18,33 @@ const Login = () => {
 
 
     const {login}= useContext(AuthContext);
+    /*
+    const login =async(inputs) => {
+        //login
+        let data= JSON.stringify(inputs);
+        let config = {
+            method: 'post',
+            maxBodyLength: Infinity,
+            url: 'http://52.66.242.197:8080/user/auth',
+            /*headers: { 
+              'Content-Type': 'application/json', 
+              'X-API-Key': '{{token}}'
+            },
+            data : data
+        };
+        axios.request(config)
+        .then((response) => {
+            console.log(JSON.stringify(response.data));
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+        
+    };
+
+    useEffect(()=>{
+        localStorage.setItem("user",JSON.stringify(currentUser));
+    },[currentUser]);*/
 
 
     const handleLogin = async (e)=>{
