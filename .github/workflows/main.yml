@@ -1,1 +1,58 @@
-# cicd demo
+# name: SocialFlux
+
+# on:
+#   push:
+#     branches: [main]
+
+# jobs:
+#   frontend:
+#      build:
+#      runs-on: ['self-hosted', 'Linux', 'X64','react' ]
+
+    
+
+#      steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '16'
+#           cache: 'npm'
+
+#       - name: Install dependencies
+#         run: npm install
+
+#       - name: Build
+#         run: npm run build
+
+name: SocialFlux
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  frontend:
+    defaults:
+      run:
+        working-directory: ./client
+    runs-on: ['self-hosted', 'Linux', 'X64','react' ]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+
